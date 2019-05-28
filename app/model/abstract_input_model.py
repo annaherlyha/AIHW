@@ -18,10 +18,10 @@ class AbstractInputDataModel(ABC):
     def server_url(self):
         pass
 
-    # @property
-    # @abstractmethod
-    # def own_name(self):
-    #     pass
+    @property
+    @abstractmethod
+    def output_file(self):
+        pass
 
     @property
     @abstractmethod
