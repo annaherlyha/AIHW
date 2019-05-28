@@ -13,11 +13,15 @@ class ProcessFlow:
         config = self.config
         print("STEP: DOWNLOAD - START")
         data_proc_dict = dict()
+        data_proc_dict['work_dir'] = config.work_dir
         data_proc_dict['server_url'] = config.server_url
         data_proc_dict['base_url'] = config.base_url
+        data_proc_dict['base_url'] = config.base_url
+        data_proc_dict['file_name'] = config.file_name
         urlprov = UrlProvider(**data_proc_dict)
         url = urlprov.get_download_link()
-        print(url)
+        return url
+
 
 
 

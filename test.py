@@ -40,6 +40,6 @@ def test_output_file(checkConfig):
     checkConfig.output_file
 
 
-# def test_main():
-#     data_model = InputDataModelFromConfig('Configurations.ini')
-#     processor = ProcessFlow(config_model=data_model)
+def test_get_download_link(checkConfig):
+    processor = ProcessFlow(config_model=checkConfig)
+    assert processor.download_archive()== 'https://www.aihw.gov.au/getmedia/5e16ec41-9bfa-4a33-bffa-9081a759cd9b/aihw-hou-299-historical.xlsx.aspx'
