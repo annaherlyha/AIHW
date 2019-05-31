@@ -1,4 +1,6 @@
 import re
+import logging
+logging.basicConfig(level=logging.INFO)
 from bs4 import BeautifulSoup
 import requests
 from selenium import webdriver
@@ -16,7 +18,7 @@ class UrlProvider:
         self._base_url = kwargs.get('base_url')
         self._file_name = kwargs.get('file_name')
         self._own_name = kwargs.get('output_file')
-        self.latest_pattern = re.compile('Data tables: Historical tables SHSC 2011–12 to 2017–18')
+        self.latest_pattern = re.compile(self._file_name)
 
     def get_download_link(self):
         driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -27,15 +29,15 @@ class UrlProvider:
         page_content = soup.find('div', {'class': 's-downloadable-resources__results'})
 
         partial_url = None
+        logging.info("Searching link for {}".format(self._file_name[:-2]))
         for tag in page_content.find_all(["a"]):
 
             if self.latest_pattern.search(tag.text):
                 partial_url = tag.get('href')
                 break
-
-        print("Searching for 'Data tables: Historical tables' link")
-        print("We weren't able to  get 'Data tables: Historical tables' url")
+        if partial_url is None:
+            print("We weren't able to get {}".format(self._file_name[:-2]))
+            raise ConnectionError("We weren't able to  get {}".format(self._file_name[:-2]))
 
         new_url = self._server_url + str(partial_url)
-        print(new_url)
         return new_url
