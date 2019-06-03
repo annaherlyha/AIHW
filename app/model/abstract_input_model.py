@@ -42,3 +42,8 @@ class AbstractInputDataModel(ABC):
     @abstractmethod
     def work_dir(self):
         pass
+
+    @property
+    @abstractmethod
+    def own_name(self):
+        pass

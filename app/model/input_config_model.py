@@ -45,5 +45,8 @@ class InputDataModelFromConfig(AbstractInputDataModel):
 
     @property
     def output_file(self):
-        return self.config.get('data_processor', 'own_name')
+        return self.config.get('data_processor', 'output_file')
 
+    @property
+    def own_name(self):
+        return self.config.get('data_processor', 'own_name')

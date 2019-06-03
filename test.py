@@ -42,4 +42,8 @@ def test_output_file(checkConfig):
 
 def test_get_download_link(checkConfig):
     processor = ProcessFlow(config_model=checkConfig)
-    assert processor.download_archive()== 'https://www.aihw.gov.au/getmedia/5e16ec41-9bfa-4a33-bffa-9081a759cd9b/aihw-hou-299-historical.xlsx.aspx'
+    assert processor.get_link()== 'https://www.aihw.gov.au/getmedia/5e16ec41-9bfa-4a33-bffa-9081a759cd9b/aihw-hou-299-historical.xlsx.aspx'
+
+def test_download_file(checkConfig):
+    processor = ProcessFlow(config_model=checkConfig)
+    assert processor.download_file()

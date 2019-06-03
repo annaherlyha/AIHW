@@ -1,14 +1,11 @@
 import re
 import logging
-logging.basicConfig(level=logging.INFO)
 from bs4 import BeautifulSoup
-import requests
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-import numpy as np
-import pandas as pd
-import os
 import time
+
+logging.basicConfig(level=logging.INFO)
 
 
 class UrlProvider:
@@ -17,7 +14,6 @@ class UrlProvider:
         self._server_url = kwargs.get('server_url')
         self._base_url = kwargs.get('base_url')
         self._file_name = kwargs.get('file_name')
-        self._own_name = kwargs.get('output_file')
         self.latest_pattern = re.compile(self._file_name)
 
     def get_download_link(self):
@@ -36,8 +32,10 @@ class UrlProvider:
                 partial_url = tag.get('href')
                 break
         if partial_url is None:
-            print("We weren't able to get {}".format(self._file_name[:-2]))
-            raise ConnectionError("We weren't able to  get {}".format(self._file_name[:-2]))
+            logging.warning("We weren't able to get {}".format(self._file_name[:-2]))
+            # raise ConnectionError("We weren't able to  get {}".format(self._file_name[:-2]))
 
         new_url = self._server_url + str(partial_url)
         return new_url
+
+
