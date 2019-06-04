@@ -10,7 +10,6 @@ class HttpDownloader:
     def __init__(self, **kwargs):
         self._dest_dir = kwargs.get('dest_dir')
         self._own_name = kwargs.get('own_name')
-        # self._own_name = 'end_file.xlsx'
         self._url = kwargs.get('url', None)
 
     def download(self):

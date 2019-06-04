@@ -13,7 +13,7 @@ class ProcessFlow:
     def config(self):
         return self._config_model
 
-    def get_link(self):
+    def _get_link(self):
         config = self.config
         logging.info("STEP: DOWNLOAD - START")
         link_dict = dict()
@@ -32,7 +32,7 @@ class ProcessFlow:
         down_dict['dest_dir'] = config.temp_dir
         down_dict['work_dir'] = config.work_dir
         down_dict['own_name'] = config.own_name
-        down_dict['url'] = self.get_link()
+        down_dict['url'] = self._get_link()
         try:
             downloader = HttpDownloader(**down_dict)
             result = downloader.download()
