@@ -8,5 +8,5 @@ if __name__ == '__main__':
 
     data_model = InputDataModelFromConfig()
     processor = ProcessFlow(config_model=data_model)
-    processor.download()
+    processor.download_file()
 
