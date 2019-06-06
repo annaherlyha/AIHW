@@ -5,7 +5,7 @@ import os
 
 logging.basicConfig(level=logging.INFO)
 
-# check
+# check2
 class HttpDownloader:
     def __init__(self, **kwargs):
         self._dest_dir = kwargs.get('dest_dir')
