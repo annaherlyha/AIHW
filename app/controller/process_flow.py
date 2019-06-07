@@ -1,6 +1,6 @@
-from app.service.flie_url_loader import UrlProvider
+from app.service.url_provider import UrlProvider
 import logging
-from app.service.file_download import HttpDownloader
+from app.service.http_downloader import HttpDownloader
 
 logging.basicConfig(level=logging.INFO)
 
@@ -20,15 +20,15 @@ class ProcessFlow:
         link_dict['server_url'] = config.server_url
         link_dict['base_url'] = config.base_url
         link_dict['file_name'] = config.file_name
-        urlprov = UrlProvider(**link_dict)
-        url = urlprov.get_download_link()
+        url_prov = UrlProvider(**link_dict)
+        url = url_prov.get_download_link()
         return url
 
     def download_file(self):
 
         logging.info("Starting Download")
         config = self.config
-        down_dict = {}
+        down_dict = dict()
         down_dict['dest_dir'] = config.temp_dir
         down_dict['work_dir'] = config.work_dir
         down_dict['own_name'] = config.own_name

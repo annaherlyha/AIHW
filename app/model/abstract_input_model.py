@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class AbstractInputDataModel(ABC):
+class AbstractInputModel(ABC):
 
     @property
     @abstractmethod
