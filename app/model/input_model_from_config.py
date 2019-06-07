@@ -1,9 +1,8 @@
 import configparser
-import os
-from app.model.abstract_input_model import AbstractInputDataModel
+from app.model.abstract_input_model import AbstractInputModel
 
 
-class InputDataModelFromConfig(AbstractInputDataModel):
+class InputModelFromConfig(AbstractInputModel):
     def __init__(self):
 
         self.config_file = 'Configurations.ini'

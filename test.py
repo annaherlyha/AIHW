@@ -1,12 +1,12 @@
 import pytest
-from app.model.input_config_model import InputDataModelFromConfig
-from app.service.flie_url_loader import UrlProvider
-from app.controller.processing import ProcessFlow
+from app.model.input_model_from_config import InputModelFromConfig
+from app.service.url_provider import UrlProvider
+from app.controller.process_flow import ProcessFlow
 
 
 @pytest.fixture()
 def checkConfig():
-    CheckConfig = InputDataModelFromConfig()
+    CheckConfig = InputModelFromConfig()
     return CheckConfig
 
 
