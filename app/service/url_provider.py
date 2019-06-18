@@ -3,6 +3,7 @@ import logging
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 from app.additional.regex import Regex
 import time
 
@@ -22,8 +23,11 @@ class UrlProvider:
 
     def get_download_link(self):
 
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+
         try:
-            driver = webdriver.Chrome(ChromeDriverManager().install())
+            driver = webdriver.Chrome(options=chrome_options, executable_path=ChromeDriverManager().install())
             driver.get(self._base_url)
         except SystemError:
             logging.warning("Need to updated Chrome")
