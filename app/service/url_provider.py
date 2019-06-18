@@ -3,7 +3,7 @@ import logging
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from app.check.regex import Regex
+from app.additional.regex import Regex
 import time
 
 logging.basicConfig(level=logging.INFO)

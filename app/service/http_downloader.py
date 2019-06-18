@@ -11,6 +11,7 @@ class HttpDownloader:
         self._dest_dir = kwargs.get('dest_dir')
         self._own_name = kwargs.get('own_name')
         self._url = kwargs.get('url', None)
+        os.makedirs(self._dest_dir, exist_ok=True)
 
     def download(self):
 
