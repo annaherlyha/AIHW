@@ -1,10 +1,14 @@
 import pandas as pd
 import numpy as np
 import os
-from app.additional.mapping import Mapping
+from app.additional.name_mapping import NameMapping
 
 
-class Converter:
+class DataConverter:
+    """
+    This class splits sheets from excel to  csv files;
+    And converts data from csv files to specific format
+    """
     def __init__(self, **kwargs):
         self._dest_dir = kwargs.get('dest_dir')
         self._work_dir = kwargs.get('work_dir')
@@ -34,10 +38,10 @@ class Converter:
                 db.columns = db.loc[db_index]
                 db = db.iloc[db_index + 1:]
                 db['territory'] = np.where(db[db.columns[-2]].isnull(), db['Data'], '1')
-                db = Mapping(db, 'territory').get_mapping()
+                db = NameMapping(db, 'territory').get_mapping()
                 db['indicator'] = np.where(~db[db.columns[-2]].isnull(), db['Data'], '')
                 db['indicator'] = np.where(db[db.columns[-1]].isnull(), '', db['indicator'])
-                db = Mapping(db, 'indicator').get_mapping()
+                db = NameMapping(db, 'indicator').get_mapping()
                 db = db[~db[db.columns[db_index]].isnull()]
             db_index = ''
             db.to_csv(self._output_dir + f[:-4] + '_converter' + '.csv', encoding='utf-8-sig', index=False)

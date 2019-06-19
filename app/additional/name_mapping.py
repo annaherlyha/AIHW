@@ -1,4 +1,7 @@
-class Mapping:
+class NameMapping:
+    """
+    This class fills the gaps in the database with values ​​that were before the gap.
+    """
     def __init__(self, df, df_column_name):
         self._df = df
         self._df_column_name = df_column_name
