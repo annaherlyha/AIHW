@@ -24,6 +24,7 @@ class DataConverter:
                 db.to_csv(self._work_dir + f[:-4] + '_' + sheet + '.csv', encoding='utf-8-sig', index=False)
         return True
 
+    """My comment was here"""
     def converter(self):
         os.chdir(self._work_dir)
         for f in os.listdir():
