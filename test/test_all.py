@@ -2,7 +2,8 @@ import pytest
 from app.model.input_model_from_config import InputModelFromConfig
 from app.model.input_model_from_config_web import InputModelFromConfigWeb
 from app.controller.process_flow import ProcessFlow
-
+from app.service.url_provider import UrlProvider
+import mock
 
 @pytest.fixture()
 def check_config():
