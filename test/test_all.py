@@ -18,11 +18,11 @@ def check_config_web():
 
 
 def test_config_web(check_config_web):
-    check_config_web.config_file_web == 'Configs/ConfigurationsWeb.ini'
+    check_config_web.config_file_web == 'configs/configurations_web.ini'
 
 
 def test_config(check_config):
-    check_config.config_file == 'Configs/Configurations.ini'
+    check_config.config_file == 'configs/configurations.ini'
 
 
 def test_base_url(check_config_web):

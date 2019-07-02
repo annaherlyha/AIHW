@@ -1,5 +1,5 @@
 from app.service.url_provider import UrlProvider
-from app.additional.logger import logger
+from app.utils.logger import logger
 from app.service.http_downloader import HttpDownloader
 from app.service.data_converter import DataConverter
 

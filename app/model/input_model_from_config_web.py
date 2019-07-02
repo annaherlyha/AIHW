@@ -5,7 +5,7 @@ from app.model.abstract_input_model_web import AbstractInputModelWeb
 class InputModelFromConfigWeb(AbstractInputModelWeb):
     def __init__(self):
 
-        self.config_file_web = 'Configs/ConfigurationsWeb.ini'
+        self.config_file_web = 'configs/configurations_web.ini'
         config_web = configparser.ConfigParser(interpolation=configparser.ExtendedInterpolation())
         config_web.read(self.config_file_web)
         self._config_web = config_web

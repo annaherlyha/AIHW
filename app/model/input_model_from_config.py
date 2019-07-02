@@ -5,7 +5,7 @@ from app.model.abstract_input_model import AbstractInputModel
 class InputModelFromConfig(AbstractInputModel):
     def __init__(self):
 
-        self.config_file = 'Configs/Configurations.ini'
+        self.config_file = 'configs/configurations.ini'
         config = configparser.ConfigParser(interpolation=configparser.ExtendedInterpolation())
         config.read(self.config_file)
         self._config = config
