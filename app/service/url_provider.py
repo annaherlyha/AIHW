@@ -3,15 +3,15 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
-from app.additional.url_regex import UrlRegex
-from app.additional.logger import logger
+from app.utils.url_regex import UrlRegex
+from app.utils.logger import logger
 import time
 
 
 class UrlProvider:
     """
     This class is responsible for getting the link,
-    the parameter of which is recorded in the ConfigurationsWeb.ini
+    the parameter of which is recorded in the configurations_web.ini
     """
 
     def __init__(self, **kwargs):

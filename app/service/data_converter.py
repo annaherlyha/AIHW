@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
-from app.additional.name_mapping import NameMapping
+from app.utils.name_mapping import NameMapping
 
 
 class DataConverter:

@@ -1,13 +1,13 @@
 import requests
 import os.path
 import os
-from app.additional.logger import logger
+from app.utils.logger import logger
 
 
 class HttpDownloader:
     """
     This class is responsible for downloading the file from URL,
-    the parameter of which is recorded in the ConfigurationsWeb.ini
+    the parameter of which is recorded in the configurations_web.ini
     """
     def __init__(self, **kwargs):
         self._dest_dir = kwargs.get('dest_dir')
