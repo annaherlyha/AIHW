@@ -16,7 +16,7 @@ class UrlProvider:
 
     def __init__(self, **kwargs):
 
-        if UrlRegex(kwargs.get('server_url')).check_url():
+        if UrlRegex(kwargs.get('server_url')).check_url() is None:
             self._server_url = kwargs.get('server_url')
             self._base_url = kwargs.get('base_url')
 
