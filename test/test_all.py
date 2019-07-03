@@ -5,6 +5,7 @@ from app.controller.process_flow import ProcessFlow
 from app.service.url_provider import UrlProvider
 import mock
 
+
 @pytest.fixture()
 def check_config():
     CheckConfig = InputModelFromConfig()
@@ -61,3 +62,13 @@ def test_get_download_link(check_config, check_config_web):
 def test_download_file(check_config, check_config_web):
     processor = ProcessFlow(config_model=check_config, config_model_web=check_config_web)
     assert processor.download_file()
+
+
+def test_get_convert_to_csv(check_config, check_config_web):
+    processor = ProcessFlow(config_model=check_config, config_model_web=check_config_web)
+    assert processor.get_convert_to_csv()
+
+
+def test_get_converter(check_config, check_config_web):
+    processor = ProcessFlow(config_model=check_config, config_model_web=check_config_web)
+    assert processor.get_converter()
