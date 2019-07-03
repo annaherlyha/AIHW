@@ -35,26 +35,14 @@ class TestUrlRegex(unittest.TestCase):
     def test_check_url_good(self):
         """
         Test that it can check web-link
-
         If the argument __test_value_good is web-link, test will pass
-
-        Parameters
-        ----------
-        self.__test_value_good: str
-                a formatted string that describes a web-link
         """
         self.assertEqual(UrlRegex(self.__test_value_good).check_url(), None)
 
     def test_check_url_bad(self):
         """
         Test that it can check value with type string that it is not web-link
-
         If the argument __test_value_bad is string, but is no web-link, test will pass
-
-        Parameters
-        ----------
-        self.__test_value_bad: str
-                a formatted string that doesnt describe a web-link
         """
         with self.assertRaisesRegex(AttributeError,
                                     "WRONG config_attribute: {} IN WEB CONFIG".format(self.__test_value_bad)):
@@ -63,13 +51,7 @@ class TestUrlRegex(unittest.TestCase):
     def test_check_url_type(self):
         """
         Test that it can check string that value is not string
-
         If the argument __test_value_type is no string, test will pass
-
-        Parameters
-        ----------
-        self.__test_value_type: float
-                any other type except string that doesnt describe a web-link
         """
         with self.assertRaisesRegex(TypeError,
                                     "Wrong type for value that use for URL"):

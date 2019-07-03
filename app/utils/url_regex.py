@@ -39,13 +39,6 @@ class UrlRegex:
         """
         Check if value is web-link or not
 
-        Parameters
-        ----------
-        self._config_attribute: str
-                a formatted string that describes a web-link
-        self._url_regex: class
-                class that include regex for checking if string is web-link or not
-
         Returns
         ------
         None
