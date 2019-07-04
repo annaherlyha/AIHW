@@ -17,7 +17,7 @@ class UrlRegex:
     Methods
     -------
     check_url
-        Check if value is web-link or not
+        Checks if value is web-link or not
 
     """
 
@@ -37,7 +37,7 @@ class UrlRegex:
 
     def check_url(self):
         """
-        Check if value is web-link or not
+        Checks if value is web-link or not
 
         Returns
         ------
