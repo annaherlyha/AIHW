@@ -13,7 +13,7 @@ more-itertools==7.0.0
 numpy==1.16.4
 pandas==0.24.2
 pluggy==0.11.0
-py==1.8.0
+py==1.10.0
 PyQt5==5.12.2
 PyQt5-sip==4.19.17
 PyQtWebEngine==5.12.1
